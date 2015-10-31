@@ -5141,11 +5141,11 @@ function client_catList() {
 	//var text="Category";
 	
 	
-	for (var p=0; p<catArray.length; p++){
-		var catId = catArray[p];
-		ob.prepend("<option value='"+ catId+"'>" + catId + "</option>");
-		ob_profile.prepend("<option value='"+ catId+"'>" + catId + "</option>");
-		}	
+	//for (var p=0; p<catArray.length; p++){
+//		var catId = catArray[p];
+//		ob.prepend("<option value='"+ catId+"'>" + catId + "</option>");
+//		ob_profile.prepend("<option value='"+ catId+"'>" + catId + "</option>");
+//		}	
 	
 	
 	ob.prepend("<option value=''>All</option>");
