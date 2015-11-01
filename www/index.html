@@ -858,8 +858,8 @@
 				<div id="myerror" style="color:#C00"></div>
 
 				
-				<div><b></b><span class="market"></span></div>
-				<div><b></b><span class="visit_client" ></span></div>
+				<div><b></b><span id="market_show" class="market"></span></div>
+				<div><b></b><span id="client_show" class="visit_client" ></span></div>
 				
 				
 				<div id="product_list_tbl">
@@ -907,8 +907,8 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td style=" color:#009191"> 
-                    <div><b></b><span class="market"></span></div>
-				   <div><b></b><span class="visit_client" ></span></div>
+                    <div><b></b><span id="client_cart" class="market"></span></div>
+				   <div><b></b><span id="visit_client_cart" class="visit_client" ></span></div>
                     </td>
                     <td width="30px"><a  onClick="OrderData();"  href="#page_order" ><img src="edit.png"></a></td>
                     <td>&nbsp;</td>
@@ -1498,8 +1498,8 @@
             <div data-role="content">
 				<div id="myerror" style="color:#C00"></div>
 
-				<div><b></b><span class="market"></span></div>
-				<div><b></b><span class="visit_client" ></span></div>
+				<div><b></b><span id="market_order_show" class="market"></span></div>
+				<div><b></b><span id="visit_client_order_show" class="visit_client" ></span></div>
 				
 				
 				
@@ -1567,7 +1567,7 @@
             <div id="checkLocation" style="color:#066"></div>
             
             
-           
+           <div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
 			<div id="visit_submit">
            <a data-role="button" id="btn_visit_submit" onClick="visitSubmit();" >Submit</a>
             </div>
@@ -1583,7 +1583,7 @@
             <!-- <a data-role="button" id="btn_visit_submit" onClick="lastVisit();" >Last Order</a>-->
             </div>
 			
-			<div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
+			
             
             
 				
