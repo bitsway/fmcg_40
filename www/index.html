@@ -164,7 +164,8 @@
 
             
 			<br/>
-			<a data-role="button" href="#page_market_ret" >Another</a>
+			<!--<a data-role="button" href="#page_market_ret" >Another</a>-->
+			<a data-role="button"  onClick="another()" >Another</a>
 		</div>
 		
 		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
@@ -327,511 +328,7 @@
 
 
 <!--=================Doctor===========================-->
-<!--=====================market visit Page Doctor==================-->
-		<div data-theme="c" data-role="page" id="page_visit_doc">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Doctor visit</h3>
-            </div>
-			
-            <div data-role="content">
-				<div id="myerror" style="color:#C00">   </div>
-				<ul data-inset="true"  data-role="listview">
-					<li >
-						<div><b></b><span class="market"></span></div>
-						<div><b></b><span class="visit_client" ></span></div>
-					</li>
-				</ul>
-                <ul data-inset="true"  data-role="listview" class="ui-nodisc-icon ui-alt-icon">
-					
-                    <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium"><a data-role="button" class="ui-btn" style="text-align:center" onClick="getCampaign();" >Product</a></li>
-                    
-                    <div id="doc_campaign"></div>
-					<!--</br>-->
-                    <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium"><a data-role="button" class="ui-btn" style="text-align:center" onClick="getDoctorGift();" >Gift</a></li>
-					<!--</br>-->
-					<div id="doc_gift"></div>
-					<!--</br></br>-->
-                    <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium"><a data-role="button" class="ui-btn" style="text-align:center" onClick="getDoctorppm();" >PPM</a></li>
-					
-                    <div id="doc_ppm"></div>
-					
-                    <li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:medium" ><a data-role="button" class="ui-btn" style="text-align:center" onClick="getDoctorSample();" >Sample</a></li>
-                   
-                    <div id="doc_sample"></div>
-                    
-					</br>
-                </ul>
-				
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					  <tr>
-						<td>Visited With</td>
-						<td width="30%"> <label><input type="radio" name="v_with" id="v_with" value="self" checked> Self</label></td>
-						<td width="30%"> <label><input type="radio" name="v_with" id="v_with"  value="supervisor">Supervisor</label></td>
-					  </tr>
-			  </table>
 
-		
-                </form>
-                
-                <input type="text" name="doc_feedback"  maxlength="50"  id="doc_feedback" placeholder="Feedback/Note"  >
-                
-				
-			            <br/>
-				 <div id="errorChkVSubmit_doc" style="color:#C00"></div>
-				<div id="checkLocation_doc" style="color:#066"></div>
-			
-
-			<a data-role="button" id="btn_location_doc" onClick="getLocationInfo();" >Confirm Location</a>            
-            
-			
-            
-           
-            
-			<div id="visit_submit_doc">
-            <a data-role="button" id="btn_visit_submit_doc" onClick="visitSubmit();" >Submit</a>
-            </div>
-            
-            <br/>
-            <br/>
-			<div align="center"><img id="wait_image_visit_submit_doc" style="" width="50px;" src="loading.gif" alt=""></div>
-				
-				
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/>
-                
-            </div><!--/cont-->
-			
-			
-			<!--panel-->	
-			
-		 </div><!--/page-->
-         <!--=====================Doctor Campaign Page==================-->
-		 
-		 
-		 <div data-theme="c" data-role="page" id="page_doctor_campaign">
-            <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
-			
-                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="70%">
-					<form class="ui-filterable">
-					<input type="text" data-iconpos="right" name="campaign_combo_id" id="campaign_combo_id" data-type="search"  >
-					</form>
-					
-					</td>
-                    <td width="10%px"></td>
-                    <td align="right"><a style="height:20px; width:27px" data-role="button" onClick="getDocCampaignData();" ><img src="done.png"></a>&nbsp;&nbsp;</td>
-                  </tr>
-                </table>
-            </div>
-			
-            <div data-role="content" style="overflow:scroll">
-				<div id="myerror_doctor_campaign" style="color:#C00"></div>
-				<ul data-inset="true"  data-role="listview">
-					<li>
-						<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;&nbsp;<span class="s_date"></span></div>						
-						<div><b>Market :</b><span class="market"></span></div>
-                        <div><b>Distributor :</b><span class="visit_distributor"></span></div>
-                        <div><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div>                        
-					</li>					
-				</ul>
-				<br>
-                <br>
-				<div id="doctor_campaign_list_tbl"></div>
-				
-                <br>
-                <br>
-			  
-			
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-			
-            </div><!--/cont-->
-			
-			
-			<div data-theme="c" data-role="footer" data-position="fixed" align="left">
-            
-           &nbsp; <a data-role="button" href="#page_visit_doc"   ><img src="back.png"></a>
-            </div>
-			
-		 </div><!--/page-->
-		 
-		
-         
-    <!--=====================Doctor Gift Page==================-->
-		<div data-theme="c" data-role="page" id="page_doctor_gift">
-            <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
-			
-               <!-- <h3>Order</h3>-->
-                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
-                    <td width="70%">
-					<form class="ui-filterable">
-					<input type="text" data-iconpos="right" name="gift_combo_id" id="gift_combo_id" data-type="search"  >
-					</form>
-					
-					</td>
-                    <td width="10%px"><!--<a data-role="button" onClick="search_item_doctor_campaign();" style="height:15px" ><img src="search.png"></a>--></td>
-                    <td align="right"><a style="height:20px; width:27px" data-role="button" onClick="getDocGiftData();" ><img src="done.png"></a>&nbsp;&nbsp;</td>
-                  </tr>
-                </table>
-            </div>
-			
-            <div data-role="content" style="overflow:scroll">
-				<div id="myerror_doctor_gift" style="color:#C00"></div>
-				<ul data-inset="true"  data-role="listview">
-					<li>
-						<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;&nbsp;<span class="s_date"></span></div>						
-						<div><b>Market :</b><span class="market"></span></div>
-                        <div><b>Distributor :</b><span class="visit_distributor"></span></div>
-                        <div><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div>                        
-					</li>					
-				</ul>
-				<br>
-                <br>
-				<div id="doctor_gift_list_tbl">abc</div>
-				
-                <br>
-                <br>
-			  
-			
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-			
-            </div><!--/cont-->
-			
-			
-			<div data-theme="c" data-role="footer" data-position="fixed" align="left">
-            
-           &nbsp; <a data-role="button" href="#page_visit_doc"  ><img src="back.png"></a>
-            </div>
-			
-		 </div><!--/page-->
-         
-         <!--=====================Doctor PPM Page Start==================-->
-		 
-		<div data-theme="c" data-role="page" id="page_doctor_ppm">
-            <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
-			
-                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
-                    <td width="70%">
-					<form class="ui-filterable">
-					<input type="text" data-iconpos="right" name="ppm_combo_id" id="ppm_combo_id" data-type="search"  >
-					</form>
-					
-					</td>
-                    <td width="10%px"></td>
-                    <td align="right"><a style="height:20px; width:27px" data-role="button" onClick="getDocppmData();" ><img src="done.png"></a>&nbsp;&nbsp;</td>
-                  </tr>
-                </table>
-            </div>
-			
-            <div data-role="content" style="overflow:scroll">
-				<div id="myerror_doctor_ppm" style="color:#C00"></div>
-				<ul data-inset="true"  data-role="listview">
-					<li>
-						<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;&nbsp;<span class="s_date"></span></div>						
-						<div><b>Market :</b><span class="market"></span></div>
-                        <div><b>Distributor :</b><span class="visit_distributor"></span></div>
-                        <div><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div>                        
-					</li>					
-				</ul>
-				<br>
-                <br>
-				<div id="doctor_ppm_list_tbl"></div>
-				
-                <br>
-                <br>
-			  
-			
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-			
-            </div><!--/cont-->
-			
-			
-			<div data-theme="c" data-role="footer" data-position="fixed" align="left">
-            
-           &nbsp; <a data-role="button" href="#page_visit_doc"  ><img src="back.png"></a>
-            </div>
-			
-		 </div><!--/page-->
-        
-		<!-- ==========================Doctor ppm end====================-->
-		
-		
-		<div data-theme="c" data-role="page" id="page_doctor_sample">
-            <div data-theme="c" data-role="header" data-position="fixed" data-tap-toggle="false">
-			
-               <!-- <h3>Order</h3>-->
-                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <!--<td align="left"><a data-role="button" href="#page_visit"  ><img src="back.png"></a></td>-->
-                    <td width="70%">
-					<form class="ui-filterable">
-					<input type="text" data-iconpos="right" name="sample_combo_id" id="sample_combo_id" data-type="search"  >
-					</form>
-					
-					</td>
-                    <td width="10%px"></td>
-                    <td align="right"><a style="height:20px; width:27px" data-role="button" onClick="getDocSampleData();" ><img src="done.png"></a>&nbsp;&nbsp;</td>
-                  </tr>
-                </table>
-            </div>
-			
-            <div data-role="content" style="overflow:scroll">
-				<div id="myerror_doctor_sample" style="color:#C00"></div>
-				<ul data-inset="true"  data-role="listview">
-					<li>
-						<div><b>Visit Type & Date:</b><span class="visit_type"></span>&nbsp;&nbsp;<span class="s_date"></span></div>						
-						<div><b>Market :</b><span class="market"></span></div>
-                        <div><b>Distributor :</b><span class="visit_distributor"></span></div>
-                        <div><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div>                        
-					</li>					
-				</ul>
-				
-				<br>
-                <br>
-				<div id="doctor_sample_list_tbl"></div>
-				
-                <br>
-                <br>
-			  
-			
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-            <br>                        
-            <br>
-            <br>            
-			<br>
-			
-            </div><!--/cont-->
-			
-			
-			<div data-theme="c" data-role="footer" data-position="fixed" align="left">
-            
-           &nbsp; <a data-role="button" href="#page_visit_doc"  ><img src="back.png"></a>
-            </div>
-			
-		 </div><!--/page-->
-<!--=========================== Profile =============-->
-<style>
-.prof_label{	
-	font-size:13px
-	}
-</style>
-<div data-theme="c" data-role="page" id="profile_update">
-  <div data-theme="c" data-role="header" data-position="fixed">
-    <a data-role="button" data-rel="back" data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-     <h3>Profile</h3>
-  </div>
-  
-  <div data-role="content"> 
-  	
-    <div align="right"><img src="" width="100%" height="150px" alt="Shop Photo" id="clientProfileImage"  style="display:none"></div>
-    
-  	<ul data-inset="true"  data-role="listview">
-        <li>
-            <div><b>Market :</b> <span class="prof_market_class"></span></div>
-            <div><b>Distributor :</b> <span class="prof_distributor_class"></span></div>
-            <div><b>Chemist ID :</b> <span class="prof_retailer_class" style="font-weight:bold"></span></div>
-        </li>					
-    </ul>
-    
-    <table width="100%">
-    	<tbody bgcolor="#BFDFDF">
-        <input type="hidden" name="" id="cp_marketid"  value="">
-        <input type="hidden" name="" id="cp_id"  value="" style="background-color:#EAEAEA" readonly>
-        
-    	<tr style="border-color: #F33"><td width="30%" class="prof_label" style="border-color: #F33">Name*</td><td>
-        <input type="text" name="" id="cp_name"  value="" style="background-color:#EAEAEA" readonly></td></tr>
-        <tr><td width="30%" class="prof_label">Address</td><td><input type="text" name="" id="cp_address"  value="" ></td></tr>        
-        <tr><td width="30%" class="prof_label" style="color:#C00">Contact 1*</td><td><input type="text" name="" id="cp_contact1"  value=""></td></tr>
-        <tr><td width="30%" class="prof_label">Contact 2</td><td><input type="text" name="" id="cp_contact2"  value=""></td></tr>        
-        <td width="30%" class="prof_label"></tbody>
-        
-        <tbody bgcolor="#DAF3F3">
-        <tr style="background-color:#CCC"><td colspan="2"><strong>Shop Info:</strong></td></tr>
-        <tr><td width="30%" class="prof_label">Manager Name</td><td><input type="text" name="" id="cp_manager_name"  value=""></td></tr>
-        <tr><td width="30%" class="prof_label">Manager Cont.No</td><td><input type="number" name="" id="cp_manager_cont_no"  value=""></td></tr>
-        <tr><td width="30%" class="prof_label">Starting Year</td><td><input type="number" name="" id="cp_starting_year"  value=""></td></tr>
-        <tr><td width="30%" class="prof_label"><!--Category*--></td><td>
-        <input type="hidden" name="" id="cp_Category"  value="GENERAL">
-    
-        <input type="hidden" name="" id="cp_lsc_covered"  value="NO">
-        </td></tr>
-      
-        <tr><td width="30%" class="prof_label" style="color:#C00">Shop (Rented/Own)*</td><td>
-        <select name="cp_shop_rent_own" id="cp_shop_rent_own" data-native-menu="false">
-            <option value="" >Select</option>
-            <option value="Rented" >Rented</option>
-            <option value="Own" >Own</option>
-        </select>
-        </td></tr>
-       
-        <tr><td width="30%" class="prof_label"><!--Status*--></td><td>
-        <input type="hidden" name="cp_status" id="cp_status"  value="ACTIVE">
-       
-        </td></tr>               
-    	</tbody>
-        
-        <tbody bgcolor="#EAEBCF">        
-        <tr style="background-color:#CCC"><td colspan="2"><strong>Personal Info:</strong></td></tr>
-        <tr><td width="30%" class="prof_label" style="color:#C00">Owner Name*</td><td><input type="text" name="" id="cp_owner_name"  value=""></td></tr>
-        <tr><td width="30%" class="prof_label">DOB</td><td>
-        <input type="date" name="" id="cp_dob"  value="" placeholder="YYYY-MM-DD">
-        
-        <input type="hidden" name="" id="cp_nid"  value="">
-        <input type="hidden" name="" id="cp_Passport"  value="">
-        
-        <input type="hidden" name="" id="cp_dom"  value="" placeholder="YYYY-MM-DD">
-        <input type="hidden" name="" id="cp_kidsinfo"  value="">
-        <input type="hidden" name="" id="cp_hobby"  value="">
-        <input type="hidden" name="cp_trade_license" id="cp_trade_license"  value="YES">
-        <input type="hidden" name="" id="cp_trade_licence_no"  value="">
-        <input type="hidden" name="cp_vat_registration" id="cp_vat_registration"  value="YES">
-        <input type="hidden" id="cp_vat_reg_no"  value="">
-        </td></tr>
-        
-        
-
-   		</tbody>
-        
-  	</table>
-  	<br>
-	<br>
-	<div id="err_profile_next_cp" style="color:#C00"></div><br>
-    <br>
-	<a  data-role="button" onClick="prifileInfoNext();" >Next</a>	
-    
-    <br>
-	
-    <br>
-	<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-  </div>
-
-
-</div> 
-
-    <!-- -------------Confirm  Profile Update -------------------- -->
-	<div data-theme="c" data-role="page" id="page_confirm_profile_update" >
-		<div data-theme="c" data-role="header" data-position="fixed" >
-		<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " onClick="clear_mgs()"><img src="menu.png"></a>
-			<a data-role="button" data-rel="back" data-iconpos="left" class="ui-btn-right" data-transition="slide"><img src="back.png"></a>
-			<h3>Confirm Update</h3>
-	  </div>
-		<div data-role="content">
-			<div id="errorConfirmProfileUpdate" style="color:#C00"></div>
-			
-			   
-			<img src="" width="128" height="128" alt="" id="myImageProfile" style="display:none">
-			<input name="lscPhotoProfile" id="lscPhotoProfile" type="hidden">	
-            
-			<input type="hidden" name="lat_p" id="lat_p" >
-			<input type="hidden" name="long_p" id="long_p" ><!--readonly-->
-            
-           
-            
-			<a data-role="button" onClick="getLocationInfo();" >Confirm Location</a>
-			
-			<br/><br/>		
-            <div id="checkLocationProfileUpdate" style="color:#066;"></div>	
-			<a data-role="button" id="btn_profile_update" onClick="lscProfileSubmit();" >Submit</a>            
-            <div align="center"><img id="wait_image_profile_update" style="" width="50px;" src="loading.gif" alt=""></div>
-				
-			
-		</div>
-		
-		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
-	</div>
-
-<!-- ------------- Profile Update Success -------------------- -->
-	<div data-theme="c" data-role="page" id="page_profile_update_success" >
-		<div data-theme="c" data-role="header" data-position="fixed" >
-		<a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " onClick="clear_mgs()"><img src="menu.png"></a>
-			<h3>Success</h3>
-	  </div>
-		<div data-role="content">
-        	<div>Profile Updated Successfully</div>
-        	
-            <a data-role="button" href="#page_market_clprofile" >Another Profile</a>
-			<br/>
-			<a data-role="button" href="#pageHome" >Home</a>
-			
-		</div>
-		
-		<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
-	</div>
- 
 
        
  
@@ -994,148 +491,6 @@
 
 
 
-<!-- ===================== Complain Page================== -->
-		<div data-theme="c" data-role="page" id="page_complain">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Complain</h3>
-            </div>
-			
-            <div data-role="content">	
-            	<div id="error_complain_page" style="color:#C00"></div>	
-                	
-				<a data-role="button" onClick="getComplain()" >New</a>
-				<a data-role="button" onClick="showComplain()" >Show</a>
-				
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed"></div>
-			
-		 </div><!--/page-->
-         
-         
-         <!-- ===================== Complain Page================== -->
-		<div data-theme="c" data-role="page" id="page_complain_show">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Feedback</h3>
-            </div>
-			
-            <div data-role="content">			
-				
-                <b>Feedback</b>
-                
-                <table id="tbl_show_complain"  border="1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px; width:100%; border-bottom:solid; border-bottom-color:#999"></table>
-                
-                
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed"></div>			
-		 </div><!--/page-->
-         
-         
-<!-- ===================== Complain New Page================== -->
-		<div data-theme="c" data-role="page" id="page_complain_new">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Feedback</h3>
-            </div>
-			
-            <div data-role="content">
-                <div id="error_complain" style="color:#C00"></div>    
-                <table width="100%">
-                    <tr><td>Feedback Type</td><td>
-                    <select name="complain_type_id" id="complain_type_id" data-native-menu="false">                        
-                    </select>                    
-                    </td></tr>
-                    
-                    
-                    <tr><td>Feedback</td><td>
-                    <textarea name="complain_ref" id="complain_ref" value="" ></textarea>
-                   </td></tr>
-                    
-                    <tr><td></td><td><input type="hidden" name="complain_details" id="complain_details"  value="">
-                    </td></tr>
-                    
-                </table>
-                
-                <a data-role="button" id="btn_complain_submit" onClick="complainSubmit();" >Submit</a>            
-            	<div align="center"><img id="wait_image_complain_submit" style="" width="50px;" src="loading.gif" alt=""></div>
-				
-                <br/><br/><br/><br/><br/><br/><br/>
-                
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed"></div>			
-		 </div><!--/page-->
-		 
-         
-<!-- ------------- Complain Success -------------------- -->
-        <div data-theme="c" data-role="page" id="page_complain_success" >
-            <div data-theme="c" data-role="header" data-position="fixed" >
-            <a data-role="button" href="#pageHome"  class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " onClick="clear_mgs()"><img src="menu.png"></a>
-                <h3>Success</h3>
-          </div>
-            <div data-role="content">
-                <div>Submitted Successfully</div>
-                
-                <a data-role="button" href="#page_complain" >Feedback</a>
-                <br/>
-                <a data-role="button" href="#pageHome" >Home</a>
-                
-            </div>
-            
-            <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" ></div>
-        </div>
-        
-<!-- ===================== Task Page================== -->
-		<div data-theme="c" data-role="page" id="page_task">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Task</h3>
-            </div>
-			
-            <div data-role="content">		
-				<div id="error_task_page" style="color:#C00"></div>	
-                
-				<a data-role="button" onClick="showTask()" >Show Task List</a>
-                
-                
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed">
-			
-			</div>
-			
-		 </div><!--/page-->
-		
-        <!-- ===================== show Task Page================== -->
-		<div data-theme="c" data-role="page" id="page_task_show">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Task</h3>
-            </div>
-			
-            <div data-role="content">
-            	<div id="error_task_list" style="color:#C00"></div>	
-                
-				<b>Task</b>
-                
-                <table id="tbl_show_task"  border="1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px; width:100%; border-bottom:solid; border-bottom-color:#999"></table>
-                <br>
-				<div align="center"><img id="wait_image_task_submit" style="" width="50px;" src="loading.gif" alt=""></div>
-                
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed"></div>			
-		 </div><!--/page-->
-         
-         
  <!-- ===================== Visit Repot ================== -->    	
         <div data-theme="c" data-role="page" id="page_visit_rpt">
             <div data-theme="c" data-role="header" data-position="fixed">			
@@ -1523,7 +878,7 @@
                 
                 <br/>
                 <div id="errorChkVSubmit_1" style="color:#C00"></div>
-				<div id="errorChkVSubmit" style="color:#C00"></div>
+				
 			<img src="" width="128" height="128" alt="" id="myImage" style="display:none">
 			<input name="lscPhoto" id="lscPhoto"   type="hidden">
 
@@ -1551,10 +906,244 @@
 					  </tr>
 			  </table>
 			</div>
-
+			
+			
+			<!--//Requisition-->
+			<div id="req_attr_div">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr >
+						<td width="20%" >Current Balance:</td>
+						<td ><input type="text" name="current_balance" id="current_balance" ></td>
+			 		</tr>
+			</table>
+			</br>
+			
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr >
+						<td colspan="4">Adjustment</td>
+				  </tr>
+					
+					
+					<tr style="background-color:#A2CFD5; height:40px">
+						<td width="50%">&nbsp;Adjustment Type	</td>
+						<td width="20%">&nbsp;Date</td>
+						<td width="10%">&nbsp;Amount</td>
+						<td width="20%">&nbsp;Note</td>
+					  </tr>	
+					  <tr>
+						<td>
+						<select id="adj_type_1" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Truck fare" >Truck fare</option>
+						<option value="Incentive" >Incentive</option>
+						<option value="Inaccessible" >Inaccessible</option>
+						<option value="VAT" >VAT</option>
+						<option value="Re-carrying" >Re-carrying</option>
+						<option value="Carrying" >Carrying</option>
+						<option value="Franchise Commission" >Franchise Commission</option>
+						<option value="Damage" >Damage</option>
+						<option value="Battery Adjustment" >Battery Adjustment</option>
+						<option value="Scratch Card" >Scratch Card</option>
+						<option value="Others Adjustment" >Others Adjustment</option>
+						</select>						</td>
+						<td > <input type="date" name="adj_date_1" id="adj_date_1"></td>
+						<td> <input type="text" name="adj_amount_1" id="adj_amount_1" ></td>
+						<td > <input type="text" name="note_1" id="note_1"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="adj_type_2" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Truck fare" >Truck fare</option>
+						<option value="Incentive" >Incentive</option>
+						<option value="Inaccessible" >Inaccessible</option>
+						<option value="VAT" >VAT</option>
+						<option value="Re-carrying" >Re-carrying</option>
+						<option value="Carrying" >Carrying</option>
+						<option value="Franchise Commission" >Franchise Commission</option>
+						<option value="Damage" >Damage</option>
+						<option value="Battery Adjustment" >Battery Adjustment</option>
+						<option value="Scratch Card" >Scratch Card</option>
+						<option value="Others Adjustment" >Others Adjustment</option>
+						</select>						</td>
+						<td > <input type="date" name="adj_date_2" id="adj_date_2"></td>
+						<td > <input type="text" name="adj_amount_2" id="adj_amount_2"></td>
+						<td > <input type="text" name="note_2" id="note_2"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="adj_type_3" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Truck fare" >Truck fare</option>
+						<option value="Incentive" >Incentive</option>
+						<option value="Inaccessible" >Inaccessible</option>
+						<option value="VAT" >VAT</option>
+						<option value="Re-carrying" >Re-carrying</option>
+						<option value="Carrying" >Carrying</option>
+						<option value="Franchise Commission" >Franchise Commission</option>
+						<option value="Damage" >Damage</option>
+						<option value="Battery Adjustment" >Battery Adjustment</option>
+						<option value="Scratch Card" >Scratch Card</option>
+						<option value="Others Adjustment" >Others Adjustment</option>
+						</select>						</td>
+						<td > <input type="date" name="adj_date_3" id="adj_date_3"></td>
+						<td > <input type="text" name="adj_amount_3" id="adj_amount_3"></td>
+						<td > <input type="text" name="note_3" id="note_3"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="adj_type_4" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Truck fare" >Truck fare</option>
+						<option value="Incentive" >Incentive</option>
+						<option value="Inaccessible" >Inaccessible</option>
+						<option value="VAT" >VAT</option>
+						<option value="Re-carrying" >Re-carrying</option>
+						<option value="Carrying" >Carrying</option>
+						<option value="Franchise Commission" >Franchise Commission</option>
+						<option value="Damage" >Damage</option>
+						<option value="Battery Adjustment" >Battery Adjustment</option>
+						<option value="Scratch Card" >Scratch Card</option>
+						<option value="Others Adjustment" >Others Adjustment</option>
+						</select>						</td>
+						<td > <input type="date" name="adj_date_4" id="adj_date_4"></td>
+						<td > <input type="text" name="adj_amount_4" id="adj_amount_4"></td>
+						<td > <input type="text" name="note_4" id="note_4"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="adj_type_5" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Truck fare" >Truck fare</option>
+						<option value="Incentive" >Incentive</option>
+						<option value="Inaccessible" >Inaccessible</option>
+						<option value="VAT" >VAT</option>
+						<option value="Re-carrying" >Re-carrying</option>
+						<option value="Carrying" >Carrying</option>
+						<option value="Franchise Commission" >Franchise Commission</option>
+						<option value="Damage" >Damage</option>
+						<option value="Battery Adjustment" >Battery Adjustment</option>
+						<option value="Scratch Card" >Scratch Card</option>
+						<option value="Others Adjustment" >Others Adjustment</option>
+						</select>						</td>
+						<td > <input type="date" name="adj_date_5" id="adj_date_5"></td>
+						<td > <input type="text" name="adj_amount_5" id="adj_amount_5"></td>
+						<td > <input type="text" name="note_5" id="note_5"></td>
+					  </tr>
+			  </table>
+			  
+			  </br></br>
+			  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr >
+						<td colspan="4">Payment for DO</td>
+				</tr>
+					<tr style="background-color:#A2CFD5; height:40px">
+						<td width="50%"> &nbsp;Bank</td>
+						<td width="20%"> &nbsp;Branch</td>
+						<td width="10%"> &nbsp;Date</td>
+						<td width="20%"> &nbsp;Amount</td>
+			    </tr>	
+					  <tr>
+						<td>
+						<select id="pay_bank_1" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Islami Bank" >Islami Bank</option>
+						<option value="Agranai Bank" >Agranai Bank</option>
+						<option value="Rupali Bank" >Rupali Bank</option>
+						<option value="Sonali Bank" >Sonali Bank</option>
+						<option value="UCBL" >UCBL</option>
+						<option value="IFIC" >IFIC</option>
+						</select>						</td>
+						<td > <input type="text" name="pay_branch_1" id="pay_branch_1"></td>
+						<td> <input type="date" name="pay_date_1" id="pay_date_1"></td>
+						<td > <input type="text" name="pay_amount_1" id="pay_amount_1"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="pay_bank_2" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Islami Bank" >Islami Bank</option>
+						<option value="Agranai Bank" >Agranai Bank</option>
+						<option value="Rupali Bank" >Rupali Bank</option>
+						<option value="Sonali Bank" >Sonali Bank</option>
+						<option value="UCBL" >UCBL</option>
+						<option value="IFIC" >IFIC</option>
+						</select>						</td>
+						<td > <input type="text" name="pay_branch_2" id="pay_branch_2"></td>
+						<td> <input type="date" name="pay_date_2" id="pay_date_2"></td>
+						<td > <input type="text" name="pay_amount_2" id="pay_amount_2"></td>
+					  </tr>
+					  
+					  <tr>
+						<td>
+						<select id="pay_bank_3" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Islami Bank" >Islami Bank</option>
+						<option value="Agranai Bank" >Agranai Bank</option>
+						<option value="Rupali Bank" >Rupali Bank</option>
+						<option value="Sonali Bank" >Sonali Bank</option>
+						<option value="UCBL" >UCBL</option>
+						<option value="IFIC" >IFIC</option>
+						</select>						</td>
+						<td > <input type="text" name="pay_branch_3" id="pay_branch_3"></td>
+						<td> <input type="date" name="pay_date_3" id="pay_date_3"></td>
+						<td > <input type="text" name="pay_amount_3" id="pay_amount_3"></td>
+					  </tr>
+					  
+					 <tr>
+						<td>
+						<select id="pay_bank_4" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Islami Bank" >Islami Bank</option>
+						<option value="Agranai Bank" >Agranai Bank</option>
+						<option value="Rupali Bank" >Rupali Bank</option>
+						<option value="Sonali Bank" >Sonali Bank</option>
+						<option value="UCBL" >UCBL</option>
+						<option value="IFIC" >IFIC</option>
+						</select>						</td>
+						<td > <input type="text" name="pay_branch_4" id="pay_branch_4"></td>
+						<td> <input type="date" name="pay_date_4" id="pay_date_4"></td>
+						<td > <input type="text" name="pay_amount_4" id="pay_amount_4"></td>
+			    </tr>
+					  
+					  <tr>
+						<td>
+						<select id="pay_bank_5" width="60%" data-native-menu="false">
+						<option value="" ></option>
+						<option value="Islami Bank" >Islami Bank</option>
+						<option value="Agranai Bank" >Agranai Bank</option>
+						<option value="Rupali Bank" >Rupali Bank</option>
+						<option value="Sonali Bank" >Sonali Bank</option>
+						<option value="UCBL" >UCBL</option>
+						<option value="IFIC" >IFIC</option>
+						</select>						</td>
+						<td > <input type="text" name="pay_branch_5" id="pay_branch_5"></td>
+						<td> <input type="date" name="pay_date_5" id="pay_date_5"></td>
+						<td > <input type="text" name="pay_amount_5" id="pay_amount_5"></td>
+					  </tr>
+			  </table>
+			  
+			  </br>
+			  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr >
+						<td style="200px"></td>
+					
+						<td ><input type="hidden" name="payment_req" id="payment_req" ></td>
+			 		</tr>
+			</table>
+			</div>
+			
+			<!--//Requisition end-->
+			
+			
 			<br/>
             <br/>
-
+			
 			<input type="hidden" name="lat" id="lat" >
 			<input type="hidden" name="longitude" id="longitude" ><!--readonly-->
             
@@ -1565,7 +1154,7 @@
             <br/>
             
             <div id="checkLocation" style="color:#066"></div>
-            
+            <div id="errorChkVSubmit" style="color:#C00"></div>
             
            <div align="center"><img id="wait_image_visit_submit" style="" width="50px;" src="loading.gif" alt=""></div>
 			<div id="visit_submit">
