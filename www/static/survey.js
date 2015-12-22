@@ -5298,6 +5298,7 @@ function another(){
 	if (localStorage.set_flag_api=='REQUISITION'){
 		 var url = "#page_rec_depot";	
 		 $.mobile.navigate(url);	
+		 location.reload();
 	}
 	else{
 		 var url = "#page_market_ret";	
