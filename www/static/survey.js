@@ -1314,9 +1314,12 @@ function getOrderData(){
 		var url = "#page_cart";	
 		$.mobile.navigate(url);	
 	}
+	else if ((localStorage.set_flag_api=='REQUISITION') && (localStorage.productOrderStr=='')){
+		//cart_data();
+		var url = "#page_order";	
+		$.mobile.navigate(url);	
+	}
 	else{
-		
-		
 		var url = "#page_visit";	
 		$.mobile.navigate(url);
 	}
