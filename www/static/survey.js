@@ -108,9 +108,16 @@ function set_confirm_page(){
 
 // -------------- If Not synced, Show login
 function first_page(){
+	//alert (localStorage.page_flag)
+	//alert (localStorage.synced)
 	if ((localStorage.synced!='YES')){
 		var url = "#login";
 		$.mobile.navigate(url);		
+	}
+	else if ((localStorage.synced=='YES') && (localStorage.page_flag==1) && (localStorage.set_flag_api=='REQUISITION')){
+		//alert (localStorage.page_flag)
+		var url = "#page_order";
+		$.mobile.navigate(url);	
 	}
 	else{
 		var url = "#pageHome";
@@ -409,7 +416,7 @@ function check_user() {
 		
 		localStorage.doctor_report_button='';
 		
-		
+		localStorage.page_flag=0;
 		
 	//-----
 	
@@ -1349,6 +1356,7 @@ function replace_special_char(string_value){
 }
 function depotNext(idName){	
 	//alert ('aaaaaaaaa')
+	localStorage.page_flag=0
 	var depotName=idName.split('|')[0];
 	var depotID=idName.split('|')[1];
 	//alert (localStorage.depotID)
@@ -1356,10 +1364,13 @@ function depotNext(idName){
 	if (localStorage.depotID!=''){
 		if (localStorage.depotID != depotID){
 			cancel_cart()
-			//localStorage.productOrderStr=''
+			
+			localStorage.page_flag=1;
+			location.reload();
 			
 		}
 	}
+
 	
 	
 	localStorage.depotName=depotName
@@ -1394,8 +1405,12 @@ function depotNext(idName){
 	if (localStorage.payment_mode_flag!='YES'){
 		$("#payment_mode_div").hide();
 	}
+	//alert (localStorage.depotID)
+	//alert (depotID)
 	
 	getOrder();
+	
+
 	
 
 }
@@ -1503,7 +1518,7 @@ function lscVisitReqSubmit(){
 	//alert (parseFloat(pay_amount))
 	
 	if ( minimum_payment_amount > pay_amount){
-		$("#errorChkVSubmit").html('Minimum Payment should be '+ minimum_payment_amount);
+		$("#errorChkVSubmit").html('Minimum Payment should be '+ minimum_payment_amount.toFixed(2));
 	}
 	else{
 		  if (localStorage.visit_location=='YES'){
@@ -1638,7 +1653,11 @@ function lscVisitReqSubmit(){
 															$("#visit_submit_doc").hide();	
 															$("#checkLocation_doc").html('');
 															$("#wait_image_visit_submit_doc").hide('');
+															localStorage.page_flag=0;
+															$("#lat").val(0);
+															$("#longitude").val(0);
 															
+																														
 															
 															var url = "#page_confirm_visit_success";
 															//var url = "#page_market_ret";	
@@ -3598,10 +3617,38 @@ function getCartData_keyup(product_id){
 
 function payment_mode(){
 	var payment_mode=($("input:radio[name='payment_mode']:checked").val())
-	
+	var lat=$("#lat").val();
+	var longitude=$("#longitude").val();
+	if (lat=='' || lat==0 || longitude=='' || longitude==0){
+		visit_location_error_flag=1;
+		
+		$("#btn_location").show();	
+		$("#visit_submit").hide();	
+	}
 	//localStorage.set_flag_api='REQUISITION'
 	//alert (localStorage.set_flag_api)
 	if (localStorage.set_flag_api=='REQUISITION'){
+		//alert (localStorage.set_flag_api)
+		//alert (localStorage.visit_location_flag!='YES')
+		$("#submit_buttons").hide('');
+		$("#delivery_date_div").hide('');
+		$("#payment_date_div").hide('');
+		$("#payment_mode_div").hide('');
+		$("#footer_button").hide('');
+		
+		
+		//if (localStorage.visit_location_flag=='YES'){
+//		//alert (localStorage.visit_location);
+//		$("#visit_location").hide();
+//		$("#visit_submit").show();
+//		
+//		}
+//		else{
+//			$("#visit_location").show();
+//			$("#visit_submit").hide();
+//		}
+		
+		
 		$("#req_attr_div").show('');
 	}
 	else{
@@ -3623,6 +3670,24 @@ function cancel_cart() {
 	$("#chemist_feedback").val('');
 	
 	$("#item_combo_id").val('');
+	
+	$("#errorChkVSubmit").val('');
+	
+	
+	
+	
+	//Blank Req info
+	//$("#adj_type_1").val("");
+	//$('#adj_type_1').val("").attr("selected", "selected");
+	//$("#adj_date_1").val('');
+	//$("#adj_amount_1").val('');
+	//$("#note_1").val('');
+	
+
+
+
+	//==============
+	
 	
 	
 	
@@ -4103,6 +4168,7 @@ $(document).ready(function(){
 	market_list_combo();
 	item_list_combo();
 	mpo_list_combo()
+	
 	$("#se_mpo").val(localStorage.user_id);
 	
 	
@@ -5305,4 +5371,16 @@ function another(){
 		 $.mobile.navigate(url);	
 	}
 }
-
+function order_bak(){
+	//alert (localStorage.set_flag_api)
+	if (localStorage.set_flag_api=='REQUISITION'){
+		 var url = "#page_rec_depot";	
+		 $.mobile.navigate(url);	
+		 addDepotList();
+		 //location.reload();
+	}
+	else{
+		 var url = "##page_visi";	
+		 $.mobile.navigate(url);	
+	}
+}
