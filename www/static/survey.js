@@ -1525,12 +1525,13 @@ function lscVisitReqSubmit(){
 	}
 	else{
 		  if (localStorage.visit_location=='YES'){
-				if (lat=='' || lat==0 || longitude=='' || longitude==0){
-					visit_location_error_flag=1;
-					$("#errorChkVSubmit").html('Location not Confirmed');	
-					$("#btn_location").show();	
-					$("#visit_submit").hide();	
-				}
+			  $("#errorChkVSubmit").html('');
+				//if (lat=='' || lat==0 || longitude=='' || longitude==0){
+//					visit_location_error_flag=1;
+//					$("#errorChkVSubmit").html('Location not Confirmed');	
+//					$("#btn_location").show();	
+//					$("#visit_submit").hide();	
+//				}
 			}
 					
 			if (productOrderStr==''){
@@ -3622,12 +3623,7 @@ function payment_mode(){
 	var payment_mode=($("input:radio[name='payment_mode']:checked").val())
 	var lat=$("#lat").val();
 	var longitude=$("#longitude").val();
-	if (lat=='' || lat==0 || longitude=='' || longitude==0){
-		visit_location_error_flag=1;
-		
-		$("#btn_location").show();	
-		$("#visit_submit").hide();	
-	}
+	
 	//localStorage.set_flag_api='REQUISITION'
 	//alert (localStorage.set_flag_api)
 	if (localStorage.set_flag_api=='REQUISITION'){
@@ -3639,6 +3635,12 @@ function payment_mode(){
 		$("#payment_mode_div").hide('');
 		$("#footer_button").hide('');
 		
+		if (lat=='' || lat==0 || longitude=='' || longitude==0){
+		visit_location_error_flag=0;
+		
+		$("#btn_location").hide();	
+		$("#visit_submit").show();	
+		}
 		
 		//if (localStorage.visit_location_flag=='YES'){
 //		//alert (localStorage.visit_location);
