@@ -1658,8 +1658,8 @@ function lscVisitReqSubmit(){
 															$("#checkLocation_doc").html('');
 															$("#wait_image_visit_submit_doc").hide('');
 															localStorage.page_flag=0;
-															$("#lat").val(0);
-															$("#longitude").val(0);
+															//$("#lat").val(0);
+															//$("#longitude").val(0);
 															
 																														
 															
