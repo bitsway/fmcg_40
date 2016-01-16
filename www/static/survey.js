@@ -3698,8 +3698,9 @@ function cancel_cart() {
 	
 	localStorage.productOrderStr='';
 	$("#product_list_tbl_cart").html("");
-	var url = "#page_rec_depot";	
-	$.mobile.navigate(url);
+	requisition()
+	//var url = "#page_visit";	
+//	$.mobile.navigate(url);
 }
 
 
