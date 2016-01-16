@@ -330,7 +330,44 @@
 <!--=================Doctor===========================-->
 
 
-       
+<!--=================Requisition Depot Start=====================-->
+		
+		<div data-theme="c" data-role="page" id="page_rec_depot">
+            <div data-theme="c" data-role="header" data-position="fixed">
+			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
+            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
+                <h3>Market</h3>
+            </div>
+			
+            <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
+            	<div ><font style="font-weight:bold; font-size:13px; color:#666"> Distributor </font></div><br>
+				
+			
+				<div id="err_market_next" style="color:#C00"></div> 
+                				
+				<!--<div id="ret_cat">
+				 <select id="catCombo" width="60%" data-native-menu="false">
+                <option value="" >Category</option>
+                </select>
+				</div>-->
+                <input id="dis_combo_id" data-type="search"  placeholder="Search">
+				
+                <ul id="dis_combo_id_lv" data-role="listview" data-filter="true" data-input="#dis_combo_id" data-inset="true" >
+                </ul>
+                
+                
+                
+                <br/><br/>
+               <!-- <div align="center"><img id="wait_image_unschedule_market" style="" width="50px;" src="loading.gif" alt=""></div>-->
+                    
+                    
+            </div><!--/cont-->
+			
+			<div data-theme="c" data-role="footer" data-position="fixed">
+			
+			</div>
+			
+		 </div><!--/page-->       
  
 
 <!--=====================order Page==================-->
@@ -1273,44 +1310,7 @@
 		
 		
 		
-		<!--=================Requisition Depot Start=====================-->
 		
-		<div data-theme="c" data-role="page" id="page_rec_depot">
-            <div data-theme="c" data-role="header" data-position="fixed">
-			<a  data-role="button" href="#pageHome" class="ui-btn-left ui-btn-icon-notext" onClick="clear_mgs()"><img src="menu.png"></a>
-            <a data-role="button" data-rel="back"  data-iconpos="left" class="ui-btn-right"><img src="back.png"></a>
-                <h3>Market</h3>
-            </div>
-			
-            <div data-role="content" style="margin-top:0px; padding-top:0px;">            	
-            	<div ><font style="font-weight:bold; font-size:13px; color:#666"> Distributor </font></div><br>
-				
-			
-				<div id="err_market_next" style="color:#C00"></div> 
-                				
-				<!--<div id="ret_cat">
-				 <select id="catCombo" width="60%" data-native-menu="false">
-                <option value="" >Category</option>
-                </select>
-				</div>-->
-                <input id="dis_combo_id" data-type="search"  placeholder="Search">
-				
-                <ul id="dis_combo_id_lv" data-role="listview" data-filter="true" data-input="#dis_combo_id" data-inset="true" >
-                </ul>
-                
-                
-                
-                <br/><br/>
-               <!-- <div align="center"><img id="wait_image_unschedule_market" style="" width="50px;" src="loading.gif" alt=""></div>-->
-                    
-                    
-            </div><!--/cont-->
-			
-			<div data-theme="c" data-role="footer" data-position="fixed">
-			
-			</div>
-			
-		 </div><!--/page-->
 		 
 		 	<!--=================Requisition Depot End=====================-->
 
