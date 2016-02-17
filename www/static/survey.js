@@ -294,7 +294,7 @@ function check_user() {
 
 	var  apipath_base_photo_dm='http://eapps001.cloudapp.net/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
-	//var  apipath_base_photo_dm='http://127.0.0.1:8000/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//	var  apipath_base_photo_dm='http://127.0.0.1:8000/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 
  // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_20150502/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
@@ -598,9 +598,9 @@ localStorage.report_button='<a data-role="button" onClick="s_order_detail_report
 													
 													
 												
+												//	var product_tbl_order='<ul id="item_combo_id_lv" data-role="listview" data-filter="true" data-input="#item_combo_id" data-inset="true" >'
 													
-													
-													var product_tbl_order='<ul id="item_combo_id_lv" data-role="listview" data-filter="true" data-input="#item_combo_id" data-inset="true" >'
+													var product_tbl_order='<ul id="item_combo_id_lv" data-role="listview" data-filter="true" data-input="#item_combo_id"  >'
 													
 													for (var j=0; j < productLength; j++){
 														var productArray2 = productList[j].split('<fd>');
@@ -630,7 +630,7 @@ localStorage.report_button='<a data-role="button" onClick="s_order_detail_report
 													
 													$("#product_list_tbl").html(localStorage.product_tbl_str);
 												
-													
+													$('#item_combo_id_lv').listview();
 													
 													//------------ Gift Item list								
 	
@@ -1369,7 +1369,7 @@ function depotNext(idName){
 			cancel_cart()
 			
 			localStorage.page_flag=1;
-			location.reload();
+			//location.reload();
 			
 		}
 	}
@@ -4183,7 +4183,7 @@ $(document).ready(function(){
 	
 	$("#sch_date").val(localStorage.search_date);
 	
-	
+	$('#item_combo_id_lv').listview();
 	//reports();
 	
 	
