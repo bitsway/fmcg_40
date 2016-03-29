@@ -286,6 +286,12 @@ function check_user() {
 	
 	
 	var cid=$("#cid").val().toUpperCase();
+	if (cid=='ABC' || cid=='OLYMPIC')
+	{
+		 cid='OLYMPIC'
+	}else{
+		cid=''
+	}
 	cid=$.trim(cid);
 	
 	
@@ -293,12 +299,11 @@ function check_user() {
 	
 	//Main
 
-//	var  apipath_base_photo_dm='http://eapps001.cloudapp.net/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+	var  apipath_base_photo_dm='http://eapps001.cloudapp.net/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
 	
-//	var  apipath_base_photo_dm='http://127.0.0.1:8000/mrep_olympic/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
-	
+//var  apipath_base_photo_dm='http://c003.cloudapp.net/az/syncmobile_order_to_delivery_withpayment/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'	
 
-  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_req/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_req/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
 	
 	
 	var user_id=$("#user_id").val();
@@ -421,7 +426,7 @@ function check_user() {
 		
 	//-----
 	
-	if (user_id=="" || user_id==undefined || user_pass=="" || user_pass==undefined){
+	if (cid=="" || cid==undefined || user_id=="" || user_id==undefined || user_pass=="" || user_pass==undefined){
 		var url = "#login";      
 		$.mobile.navigate(url);
 		$("#error_login").html("Required User ID and Password");	
